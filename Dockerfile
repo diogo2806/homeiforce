@@ -1,7 +1,9 @@
 FROM nginx:alpine
 
+ENV LEADS_API_BASE_URL=https://hom-api-comercial.iforce.com.br
+
 COPY index.html /usr/share/nginx/html/index.html
 COPY favicon.svg /usr/share/nginx/html/favicon.svg
-COPY default.conf /etc/nginx/conf.d/default.conf
+COPY default.conf.template /etc/nginx/templates/default.conf.template
 
 EXPOSE 80
