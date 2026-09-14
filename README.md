@@ -39,7 +39,7 @@ O formulário envia `POST /api/leads` com JSON no formato:
 }
 ```
 
-`produto` aceita `Praxis` ou `Guardiao`. O Nginx encaminha a rota pública para `${LEADS_API_BASE_URL}/api/v1/public/leads`.
+`produto` aceita `Praxis` ou `Guardiao`. O Nginx encaminha a rota pública para `${LEADS_API_BASE_URL}/api/v1/public/leads`. Como o upstream configurado pode usar HTTPS por hostname, o proxy envia SNI com o host resolvido pelo `proxy_pass`, preservando a negociação TLS com o virtual host da API comercial.
 
 Durante o envio, o botão é desabilitado para evitar duplicidade. A requisição possui timeout de 10 segundos. Em caso de falha ou timeout, os dados preenchidos permanecem no formulário. Em caso de sucesso, o formulário é limpo e a seleção de produto retorna ao estado neutro.
 
