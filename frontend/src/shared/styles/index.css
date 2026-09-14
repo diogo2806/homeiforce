@@ -64,6 +64,7 @@ a {
   inset: 0 0 auto;
   z-index: 10;
   padding: 20px 0;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--blue2) 100%);
 }
 
 .header-inner,
