@@ -1,12 +1,3 @@
-const BRAND_MARK = `
-  <svg class="mark" viewBox="0 0 160 125" aria-hidden="true" focusable="false">
-    <path d="M16 10H66L53 52H4L16 10Z" fill="#fff"/>
-    <circle cx="35" cy="31" r="10" fill="#101820"/>
-    <path d="M76 10H151C148 28 140 42 123 42H91L84 65H60L71 24C73 17 74 14 76 10Z" fill="#9fc2df"/>
-    <path d="M4 59H53L39 110C36 120 27 124 12 124H0L4 59Z" fill="#fff"/>
-    <path d="M60 59H123C120 77 111 88 94 88H79L71 111C68 120 59 124 44 124H31C45 116 50 109 53 98L60 59Z" fill="#fff"/>
-  </svg>`;
-
 const BOOK_OPEN_ICON = `
   <svg class="manual-icon" data-icon="BookOpen" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
     <path d="M2.5 5.5A2.5 2.5 0 0 1 5 3h4a3 3 0 0 1 3 3v15a3 3 0 0 0-3-3H5a2.5 2.5 0 0 0-2.5 2.5z"/>
@@ -18,8 +9,7 @@ export function renderHeader() {
     <header class="header">
       <div class="container header-inner">
         <a class="brand" href="#inicio" aria-label="iForce">
-          ${BRAND_MARK}
-          <span>iForce</span>
+          <img src="/iforce-logo.svg" alt="iForce Tecnologia" width="88" height="88">
         </a>
         <div class="header-actions">
           <button
