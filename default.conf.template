@@ -1,0 +1,28 @@
+server {
+    listen 80;
+    server_name _;
+
+    root /usr/share/nginx/html;
+    index index.html;
+
+    location = /favicon.ico {
+        try_files /favicon.svg =404;
+        default_type image/svg+xml;
+        add_header Cache-Control "public, max-age=86400";
+    }
+
+    location = /api/leads {
+        proxy_pass ${LEADS_API_BASE_URL}/api/v1/public/leads;
+        proxy_http_version 1.1;
+        proxy_set_header Host $proxy_host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_connect_timeout 5s;
+        proxy_send_timeout 10s;
+        proxy_read_timeout 10s;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
