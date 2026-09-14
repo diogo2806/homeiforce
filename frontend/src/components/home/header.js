@@ -8,8 +8,8 @@ export function renderHeader() {
   return `
     <header class="header">
       <div class="container header-inner">
-        <a class="brand" href="#inicio" aria-label="iForce">
-          <img src="/iforce-logo.svg" alt="iForce Tecnologia" width="88" height="88">
+        <a class="brand" href="#inicio" aria-label="iForce Tecnologia">
+          <img src="/frontend/src/components/home/iforce-logo-header.svg" alt="iForce Tecnologia" width="186" height="94">
         </a>
         <div class="header-actions">
           <button
